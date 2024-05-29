@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb61da6e-7722-4745-984c-ef0e4a1354dd" name="Changes" comment="git-test" />
+    <list default="true" id="eb61da6e-7722-4745-984c-ef0e4a1354dd" name="Changes" comment="webpack 테스트 진행중">
+      <change afterPath="$PROJECT_DIR$/1_Gugudan/client.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1_Gugudan/gugudan.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1_Gugudan/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1_Gugudan/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1_Gugudan/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2_WordRelay/WordRelayClass.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2_WordRelay/WordRelayHooks.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2_WordRelay/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2_WordRelay/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture/client.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2024-05-24__2_39__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack/WordRelay.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/lecture/WordRelay.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack/client.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/2_WordRelay/client.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/lecture/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/lecture/webpack.config.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,20 +41,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/PROJECT/react-test&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/PROJECT/react/react-test/2_WordRelay",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.XML",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PROJECT\react\react-test\2_WordRelay" />
+      <recent name="D:\PROJECT\react\react-test\1_Gugudan" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -56,6 +80,12 @@
       <updated>1716528580749</updated>
       <workItem from="1716528581616" duration="961000" />
       <workItem from="1716529588604" duration="21000" />
+      <workItem from="1716765918278" duration="5021000" />
+      <workItem from="1716787539766" duration="143000" />
+      <workItem from="1716787692819" duration="66000" />
+      <workItem from="1716797839677" duration="501000" />
+      <workItem from="1716851563431" duration="23150000" />
+      <workItem from="1716938758449" duration="13958000" />
     </task>
     <task id="LOCAL-00001" summary="git-test">
       <option name="closed" value="true" />
@@ -65,7 +95,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716528758782</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="webpack 테스트 진행중">
+      <option name="closed" value="true" />
+      <created>1716535753274</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716535753274</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,6 +134,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="git-test" />
-    <option name="LAST_COMMIT_MESSAGE" value="git-test" />
+    <MESSAGE value="webpack 테스트 진행중" />
+    <option name="LAST_COMMIT_MESSAGE" value="webpack 테스트 진행중" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
