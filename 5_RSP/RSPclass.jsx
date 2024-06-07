@@ -33,22 +33,7 @@ class RSPclass extends Component {
    * 이 부분에 비동기 요청을 많이 작성함.
    **/
   componentDidMount() {
-    this.interval = setInterval(() => {
-      const {imgCoord} = this.state; // 비동기 함수가 비동기 함수 바깥에 있는 변수 참조시 클로저 발생!(js)
-      if (imgCoord === rspCoords.바위) {
-        this.setState({
-          imgCoord: rspCoords.가위,
-        });
-      } else if (imgCoord === rspCoords.가위) {
-        this.setState({
-          imgCoord: rspCoords.보,
-        });
-      } else if (imgCoord === rspCoords.보) {
-        this.setState({
-          imgCoord: rspCoords.바위,
-        });
-      }
-    }, 1000)
+    this.interval = setInterval(this.changeHand, 100);
   }
 
 
@@ -62,10 +47,23 @@ class RSPclass extends Component {
   }
 
   changeHand = () => {
-
+    const {imgCoord} = this.state; // 비동기 함수가 비동기 함수 바깥에 있는 변수 참조시 클로저 발생!(js)
+      if (imgCoord === rspCoords.바위) {
+        this.setState({
+          imgCoord: rspCoords.가위,
+        });
+      } else if (imgCoord === rspCoords.가위) {
+        this.setState({
+          imgCoord: rspCoords.보,
+        });
+      } else if (imgCoord === rspCoords.보) {
+        this.setState({
+          imgCoord: rspCoords.바위,
+        });
+      }
   }
 
-  onClickBtn = (choice) => {
+  onClickBtn = (choice) => () =>{
     const {imgCoord} = this.state;
     clearInterval(this.interval);
     const myScore = scores[choice];
