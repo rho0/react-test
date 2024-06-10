@@ -1,4 +1,4 @@
-import React, {Component, useEffect, useRef, useState} from "react";
+import React, {Component, useCallback, useEffect, useMemo, useRef, useState} from "react";
 import BallClass from './BallClass';
 
 
@@ -15,7 +15,12 @@ function getWinNumbers() {
 }
 
 const LottoHooks = () => {
-  const [winNumbers, setWinNumbers] = useState(getWinNumbers());
+  //getWinNumbers가 렌더되는 만큼 호출되는것 방지하기
+  // useMemo(() => {}, []) 배열안에 값이 바뀌지 않는한 다시 호출하지 않는다. 배열안에 들어간 인자값이 바뀌면 useMemo도 다시 실행됨.
+  // useMemo: 복잡한 함수 결과값을 기억함(함수의 리턴값을 기억함). useRef: 일반 값을 기억함.
+  const lottoNumbers = useMemo(() => getWinNumbers(), []);
+
+  const [winNumbers, setWinNumbers] = useState(lottoNumbers);
   const [winBalls, setWinBalls] = useState([]);
   const [bonus, setBonus] = useState(null);
   const [redo, setRedo] = useState(false);
@@ -52,13 +57,18 @@ const LottoHooks = () => {
   //배열에 요소가 있으면 componentDidMount랑 componentDidUpdate 둘 다 수행
 
 
-  const onClickRedo = () => {
+  // useCallback: 함수 자체를 기억함
+  // 함수 컴포넌트가 재실행되도 onClickRedo가 재실행 되지 않음
+  // 예를들어 함수 생성 자체가 너무 오래걸릴 경우에 사용.
+  // 필수 사용: 자식 컴포넌트에 함수 자체를 넘겨줄 경우 꼭 useCallback을 사용해야함!
+  const onClickRedo = useCallback(() => {
+    //배열에 값을 넣지 않는다면 console.log(winNumbers)를 찍어보면 값이 변하지만 계속 첫번째 return값을 기억하고있음.
     setWinNumbers(getWinNumbers());
     setWinBalls([]);
     setBonus(null);
     setRedo(false);
     timeouts.current = []; //timeouts 값이 변화함
-  }
+  }, [winNumbers]); // 배열안의 값이 매우 중요함! 어떤값이 변햇을떄 다시 실행할지 정하는 부분!
 
     return (
       <>
