@@ -19,12 +19,15 @@ function useInterval(callback, delay) {
       function tick() {
         savedCallback.current();
       }
+      // tick으로 새로 정의한 함수를 쓰는 이유: 타이밍 문제 -> delay 발생.
 
       if (delay !== null) {
         let id = setInterval(tick, delay);
-        return () => clearInterval(id);
+        return () => {
+          clearInterval(id)
+        };
       }
-    }, []);
+    }, [delay]);
 
     return savedCallback.current;
 }

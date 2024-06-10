@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
+import useInterval from "./useInterval";
 
 
 const rspCoords = {
@@ -14,20 +15,12 @@ const scores = {
 }
 
 
-const RSPhooks = () => { //함수컴포넌트는 이 안이 통째로 리렌더링
+const RSPuseCustomHooks = () => { //함수컴포넌트는 이 안이 통째로 리렌더링
   const [result, setResult] = useState('');
   const [imgCoord, setImgCoord] = useState(rspCoords.바위);
   const [score, setScore] = useState(0);
+  const [isRunning, setRunning] = useState(true); // 인터벌을 멈추기위한
 
-  const interval = useRef();
-
-  useEffect(() => { //componentDidMount, componentDidUpdate 역할을 대신 해줄 공간(1:1 대응은 아님.)
-    interval.current = setInterval(changeHand, 100);
-    return () => {// componentWillUnMount 역할.
-      clearInterval(interval.current);
-    }
-  }, [imgCoord]);
-  //클로저 문제 해결해주는 부분, 여기에
 
   const computerChoice = (imgCoord) => {
     return Object.entries(rspCoords).find(function (v) {
@@ -45,9 +38,13 @@ const RSPhooks = () => { //함수컴포넌트는 이 안이 통째로 리렌더�
     }
   }
 
+  useInterval(changeHand, isRunning ? 100 : null);
 
   const onClickBtn = (choice) => () => {
-    clearInterval(interval.current);
+    // clearInterval(interval.current);
+
+    if (isRunning) {
+      setRunning(false);
       const myScore = scores[choice];
       const cpuScore = scores[computerChoice(imgCoord)];
       const diff = myScore - cpuScore;
@@ -63,8 +60,9 @@ const RSPhooks = () => { //함수컴포넌트는 이 안이 통째로 리렌더�
       }
 
       setTimeout(() => {
-        interval.current = setInterval(changeHand, 100);
+        setRunning(true);
       }, 1000);
+    }
   }
 
 
@@ -83,4 +81,4 @@ const RSPhooks = () => { //함수컴포넌트는 이 안이 통째로 리렌더�
 }
 
 
-export default RSPhooks;
+export default RSPuseCustomHooks;
