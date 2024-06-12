@@ -1,9 +1,9 @@
 {
-  "name": "5_rsp",
+  "name": "8_mineSearch",
   "version": "1.0.0",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "../7_Tictactoe/node_modules/.bin/webpack serve --env development",
+    "dev": "webpack serve --env development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
