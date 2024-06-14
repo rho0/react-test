@@ -23,7 +23,7 @@ module.exports = {
                     }],
                     '@babel/preset-react',
                 ],
-                plugins: ['react-refresh/babel'],
+                plugins: ['react-refresh/babel', '@babel/plugin-proposal-class-properties'],
             },
             exclude: path.join(__dirname, 'node_modules'),
         }],
@@ -37,6 +37,7 @@ module.exports = {
         publicPath: '/dist',
     },
     devServer: {
+        historyApiFallback: true,
         devMiddleware: { publicPath: '/dist' },
         static: { directory: path.resolve(__dirname) },
         hot: true

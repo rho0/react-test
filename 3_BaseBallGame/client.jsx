@@ -5,7 +5,7 @@ import NumberBaseballClass from "./NumberBaseballClass";
 import Test from "../lecture/RenderTest";
 
 // const NumberBaseballHooks = './NumberBaseballHooks';
-// const NumberBaseballClass = './NumberBaseballClass';
-const RenderTest = './Test';
+const NumberBaseballClass = './NumberBaseballClass';
+// const RenderTest = './Test';
 
-ReactDom.render(<RenderTest />, document.querySelector('#root'));
+ReactDom.render(<NumberBaseballClass />, document.querySelector('#root'));
