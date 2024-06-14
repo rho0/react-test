@@ -8,6 +8,7 @@ class Game extends Component {
   render() {
     return (
       <Routes>
+        <Route path="*" element={<div>요청이없을때</div>} />
         <Route path="numberBaseball" element={<NumberBaseballClass />} />
         <Route path="numberBaseball/:testId" element={<DetailPages />} />
         <Route path="lotto" element={<LottoClass />} />

@@ -15,6 +15,10 @@ const Games = () => {
         <br />
         <Link to={"/game/numberBaseball/2"}>숫자야구/Function 호출</Link>
         <br />
+        <Link to={"/game/numberBaseball/1?rho=노소영"}>
+          숫자야구/Class 노소영 호출
+        </Link>
+        <br />
         <Link to={"/game/lotto"}>lotto</Link>
         <br />
         <Link to={"/game/test"}>게임매쳐</Link>
